@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# check that a value is provided for script
+
+if [[ -z "$1" || "$1" == "--help" ]]; then
+        # Provide helpful prompt to the user
+        echo "Usage $0 <fruit name as lowercase>"
+        exit 1
+fi
+
+# list of accepted fruit as a switch statement
+
+case $1 in 
+	apple)
+		echo "$1's are green"
+		exit 0
+		;;
+
+	lychee)
+		echo "$1 are red"
+		exit 0
+		;;
+
+	pear)
+		echo "$1 are speckled green"
+		exit 0
+		;;
+
+	# Unknown fruit or argument
+	*)
+		echo "Unknown fruit: '$1'"
+		exit 1
+		;;
+esac
