@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Use a default value if var is empty or unset
+name="Elliot"
+echo "Hello, ${name:-User}"
+echo "Name: (Should be blank)$name"
+# Hello User
+
+# Set the variable if unset or empty
+name=""
+echo "${name:-User}"
+echo "$name"

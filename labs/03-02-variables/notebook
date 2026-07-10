@@ -1,0 +1,18 @@
+#!/bin/bash
+#name='World'
+#echo 'Inside single quotes everything is literal'
+#echo 'Hello, $name'
+
+#echo 'Inside double quotes everything is expanded'
+#echo "Hello, $name"
+
+#echo 'Using no quotes can be dangerous'
+#echo "Message=Hello,     World"
+#message="Hello,     World"
+#echo $message
+#echo 'Use double quotes'
+#echo "$message"
+
+touch "my important file.txt"
+
+

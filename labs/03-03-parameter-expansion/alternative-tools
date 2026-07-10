@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# create dummy file
+
+testfile="dummy.txt"
+
+touch "$testfile"
+
+echo "hello hello hello" > "$testfile"
+# sed
+echo "The test file contains: $(cat $testfile)"
+
+echo "the sed tool can replace words inline" 
+
+sed -i 's/hello/hi/g' "$testfile"
+
+echo "Now the test file contains: $(cat $testfile)"
+
+# awk
+echo "awk can extract fields"
+
+echo "first second third" > "$testfile"
+
+echo "The test file contains: $(cat $testfile)"
+
+echo "The second word is: $(awk '{print $2}' "$testfile")"
+
+# tr
+echo "tr can translate characters"
+
+echo "capitalised" > "$testfile"
+
+echo "The test file contains: $(cat $testfile)"
+
+echo "After being transformed the word is now capitalised: $(cat "$testfile" | tr 'a-z' 'A-Z')"
+
+# cut - extract columns
+echo "first:second:third" > "$testfile"
+
+echo "cut can extract columns"
+
+echo "The test file contains: $(cat $testfile)"
+
+echo "The second column is: $(cat $testfile | cut -d: -f2)"
+
+# clean up files
+rm "$testfile"
