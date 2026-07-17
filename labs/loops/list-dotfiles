@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# loop
+
+for file in ~/dotfiles/*; do
+	# list file if file
+	[[ -f "$file" ]] || continue
+	
+	echo "$file"
+
+done < ~/dotfiles/
