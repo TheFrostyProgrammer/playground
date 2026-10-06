@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test
+  name: test
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        # swap between alpine3.23 and alpine3.24
+        - image: httpd:alpine3.23
+          name: httpd
+  strategy:
+    type: Recreate
