@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mealie
+  name: mealie-elliot-demo
+spec:
+  containers:
+  - image: ghcr.io/mealie-recipes/mealie:v3.27.0
+    name: mealie
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
